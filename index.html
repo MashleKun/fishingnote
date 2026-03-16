@@ -33,6 +33,9 @@
     .modal-title{margin:0 0 12px;font-size:20px;}
     .modal-body textarea{width:100%;height:180px;font-family:monospace;font-size:12px;padding:10px;margin-bottom:12px;}
     
+    /* 筛选区排版优化，保证在手机上不会太挤 */
+    .filters > * { flex: 1 1 120px; }
+    
     @media(max-width:700px){.mini-stats{grid-template-columns:repeat(3,1fr)}}@media(max-width:640px){.hero{min-height:240px}.hero-inner{min-height:240px;padding:18px}.hero h1{font-size:26px}.hero-avatar{width:82px;height:82px}.item-title{font-size:20px}.area-row{align-items:flex-start}.area-row-actions{width:100%}.recent-item{flex-direction:column}.mini-stats{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head>
@@ -46,7 +49,33 @@
 
     <details class="backup-box"><summary>备份 / 恢复（防丢失必看！）</summary><div class="backup-body"><div class="stats"><div class="stat"><div class="small muted">总记录数</div><div class="num" id="totalTrips">0</div></div><div class="stat"><div class="small muted">打龟次数</div><div class="num" id="totalBlank">0</div></div></div><div class="actions"><button class="btn-ok" type="button" id="btnShowExport">导出备份 (防微信拦截)</button><button class="label-btn" type="button" id="btnShowImport">导入备份</button><button class="btn-danger" type="button" id="clearAllBtn">清空全部记录</button></div><div class="small muted" style="margin-top:8px; line-height: 1.6;">注意：数据目前存在微信里。如果打算清理微信缓存或者换手机，请务必先点击【导出备份】，把弹出的代码复制发给“文件传输助手”保存！</div></div></details>
 
-    <section class="card"><div class="card-header"><div class="toolbar"><h2>以前记过的</h2><div class="toolbar-right filters"><input id="searchInput" type="text" placeholder="搜区域 / 鱼种 / 备注" style="min-width:160px;" /><select id="filterArea"><option value="">全部区域</option></select><select id="filterResult"><option value="">全部结果</option><option>很好</option><option>一般</option><option>差</option><option>打龟</option></select></div></div></div><div class="card-body"><div id="tripList" class="list"></div><div class="pagination" style="margin-top:12px;justify-content:space-between"><button id="prevPageBtn" class="btn-secondary btn-mini" type="button">上一页</button><div class="small muted" id="pageInfo">第 1 页</div><button id="nextPageBtn" class="btn-secondary btn-mini" type="button">下一页</button></div></div></section>
+    <section class="card">
+      <div class="card-header">
+        <div class="toolbar">
+          <h2>以前记过的</h2>
+          <div class="toolbar-right filters">
+            <!-- 新增了按日期查找的日历控件 -->
+            <input id="filterDate" type="date" title="按具体日期查找" />
+            <input id="searchInput" type="text" placeholder="搜关键字 / 备注" />
+            <select id="filterArea"><option value="">全部区域</option></select>
+            <select id="filterResult">
+              <option value="">全部结果</option>
+              <option>很好</option><option>一般</option><option>差</option><option>打龟</option>
+            </select>
+            <!-- 新增了一键清空所有条件的按钮 -->
+            <button id="clearFilterBtn" class="btn-secondary btn-mini" type="button" style="padding: 0 10px;">显示全部</button>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="tripList" class="list"></div>
+        <div class="pagination" style="margin-top:12px;justify-content:space-between">
+          <button id="prevPageBtn" class="btn-secondary btn-mini" type="button">上一页</button>
+          <div class="small muted" id="pageInfo">第 1 页</div>
+          <button id="nextPageBtn" class="btn-secondary btn-mini" type="button">下一页</button>
+        </div>
+      </div>
+    </section>
   </div>
 
   <!-- 专门解决微信拦截的弹窗：导出 -->
@@ -85,8 +114,7 @@
     const STORAGE_AREAS = 'gh-aotou-areas';
     const PAGE_SIZE = 10;
     
-    const els = { tripId:document.getElementById('tripId'), tripDate:document.getElementById('tripDate'), tripAreaInput:document.getElementById('tripAreaInput'), newAreaInput:document.getElementById('newAreaInput'), addAreaBtn:document.getElementById('addAreaBtn'), areaChips:document.getElementById('areaChips'), toggleAreaManageBtn:document.getElementById('toggleAreaManageBtn'), areaManageBox:document.getElementById('areaManageBox'), areaManageList:document.getElementById('areaManageList'), restoreDefaultAreasBtn:document.getElementById('restoreDefaultAreasBtn'), areaInsightSelect:document.getElementById('areaInsightSelect'), areaInsightPanel:document.getElementById('areaInsightPanel'), departTime:document.getElementById('departTime'), returnTime:document.getElementById('returnTime'), peopleCount:document.getElementById('peopleCount'), seaState:document.getElementById('seaState'), resultLevel:document.getElementById('resultLevel'), mainSpecies:document.getElementById('mainSpecies'), notes:document.getElementById('notes'), tripForm:document.getElementById('tripForm'), formTitle:document.getElementById('formTitle'), tripList:document.getElementById('tripList'), totalTrips:document.getElementById('totalTrips'), totalBlank:document.getElementById('totalBlank'), resetBtn:document.getElementById('resetBtn'), clearAllBtn:document.getElementById('clearAllBtn'), searchInput:document.getElementById('searchInput'), filterArea:document.getElementById('filterArea'), filterResult:document.getElementById('filterResult'), prevPageBtn:document.getElementById('prevPageBtn'), nextPageBtn:document.getElementById('nextPageBtn'), pageInfo:document.getElementById('pageInfo'), statusBox:document.getElementById('statusBox'),
-    // 新增弹窗相关节点
+    const els = { tripId:document.getElementById('tripId'), tripDate:document.getElementById('tripDate'), tripAreaInput:document.getElementById('tripAreaInput'), newAreaInput:document.getElementById('newAreaInput'), addAreaBtn:document.getElementById('addAreaBtn'), areaChips:document.getElementById('areaChips'), toggleAreaManageBtn:document.getElementById('toggleAreaManageBtn'), areaManageBox:document.getElementById('areaManageBox'), areaManageList:document.getElementById('areaManageList'), restoreDefaultAreasBtn:document.getElementById('restoreDefaultAreasBtn'), areaInsightSelect:document.getElementById('areaInsightSelect'), areaInsightPanel:document.getElementById('areaInsightPanel'), departTime:document.getElementById('departTime'), returnTime:document.getElementById('returnTime'), peopleCount:document.getElementById('peopleCount'), seaState:document.getElementById('seaState'), resultLevel:document.getElementById('resultLevel'), mainSpecies:document.getElementById('mainSpecies'), notes:document.getElementById('notes'), tripForm:document.getElementById('tripForm'), formTitle:document.getElementById('formTitle'), tripList:document.getElementById('tripList'), totalTrips:document.getElementById('totalTrips'), totalBlank:document.getElementById('totalBlank'), resetBtn:document.getElementById('resetBtn'), clearAllBtn:document.getElementById('clearAllBtn'), searchInput:document.getElementById('searchInput'), filterArea:document.getElementById('filterArea'), filterResult:document.getElementById('filterResult'), filterDate:document.getElementById('filterDate'), clearFilterBtn:document.getElementById('clearFilterBtn'), prevPageBtn:document.getElementById('prevPageBtn'), nextPageBtn:document.getElementById('nextPageBtn'), pageInfo:document.getElementById('pageInfo'), statusBox:document.getElementById('statusBox'),
     exportModal:document.getElementById('exportModal'), exportTextarea:document.getElementById('exportTextarea'), btnShowExport:document.getElementById('btnShowExport'), btnCopyData:document.getElementById('btnCopyData'), importModal:document.getElementById('importModal'), importTextarea:document.getElementById('importTextarea'), btnShowImport:document.getElementById('btnShowImport'), btnConfirmImport:document.getElementById('btnConfirmImport')};
     
     let state = { trips: [], areas: [], areaManageOpen: false, currentPage: 1 };
@@ -133,7 +161,24 @@
     function renderAreaManage(){ els.areaManageBox.classList.toggle('hide', !state.areaManageOpen); els.toggleAreaManageBtn.textContent = state.areaManageOpen ? '收起管理' : '管理常用区域'; if(!state.areaManageOpen) return; if(!state.areas.length){ els.areaManageList.innerHTML='<div class="small muted">还没有常用区域。</div>'; return; } els.areaManageList.innerHTML=state.areas.map(area=>`<div class="area-row"><div class="area-row-name">${escapeHtml(area)}</div><div class="area-row-actions"><button class="btn-secondary btn-mini" type="button" data-area-edit="${escapeHtml(area)}">改名</button><button class="btn-danger btn-mini" type="button" data-area-delete="${escapeHtml(area)}">删除</button></div></div>`).join(''); }
     function renderStats(){ els.totalTrips.textContent=state.trips.length; els.totalBlank.textContent=state.trips.filter(t=>(t.resultLevel||'')==='打龟').length; }
     function resultClass(result){ if(result==='很好') return 'result-good'; if(result==='一般') return 'result-mid'; if(result==='差') return 'result-bad'; if(result==='打龟') return 'result-blank'; return ''; }
-    function filteredTripsBase(){ const q=(els.searchInput.value||'').trim().toLowerCase(); const resultFilter=els.filterResult.value; const areaFilter=els.filterArea.value; return [...state.trips].filter(item=>{ const hay=[item.tripArea,item.mainSpecies,item.notes,item.tripDate,item.resultLevel].filter(Boolean).join(' | ').toLowerCase(); return (!q||hay.includes(q)) && (!resultFilter||item.resultLevel===resultFilter) && (!areaFilter || (item.tripArea||'').trim()===areaFilter); }).sort((a,b)=>(b.tripDate||'').localeCompare(a.tripDate||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')); }
+    
+    // 增加按日期筛选逻辑
+    function filteredTripsBase(){ 
+        const q=(els.searchInput.value||'').trim().toLowerCase(); 
+        const resultFilter=els.filterResult.value; 
+        const areaFilter=els.filterArea.value; 
+        const dateFilter=els.filterDate.value; // 获取日历控件选中的日期
+
+        return [...state.trips].filter(item=>{ 
+            const hay=[item.tripArea,item.mainSpecies,item.notes,item.tripDate,item.resultLevel].filter(Boolean).join(' | ').toLowerCase(); 
+            const matchesQ = !q || hay.includes(q); 
+            const matchesResult = !resultFilter || item.resultLevel === resultFilter; 
+            const matchesArea = !areaFilter || (item.tripArea||'').trim() === areaFilter; 
+            const matchesDate = !dateFilter || item.tripDate === dateFilter; // 如果没选日期，或者日期完全相等
+            
+            return matchesQ && matchesResult && matchesArea && matchesDate; 
+        }).sort((a,b)=>(b.tripDate||'').localeCompare(a.tripDate||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')); 
+    }
     
     function renderAreaInsights(){ const selected=els.areaInsightSelect.value; const areas=allHistoricalAreas(); if(selected==='__ALL__'){ if(!areas.length){ els.areaInsightPanel.innerHTML='<div class="empty">还没有可看的区域情况。先记几条，再回来看看。</div>'; return; } const summary = areas.map(area=>{ const trips=state.trips.filter(t=>(t.tripArea||'').trim()===area).sort((a,b)=>(b.tripDate||'').localeCompare(a.tripDate||'')); const blank=trips.filter(t=>t.resultLevel==='打龟').length; const last=trips[0]?.tripDate||'—'; return `<div class="summary-card"><div class="small muted">${escapeHtml(area)}</div><div class="n">${trips.length}</div><div class="small muted">打龟 ${blank} 次　最近 ${escapeHtml(last)}</div><div style="margin-top:8px"><button class="btn-secondary btn-mini" type="button" data-insight-jump="${escapeHtml(area)}">查看这个区域</button></div></div>`; }).join(''); els.areaInsightPanel.innerHTML=`<div class="insight-summary">${summary}</div>`; return; }
       const area=selected; const trips=state.trips.filter(t=>(t.tripArea||'').trim()===area).sort((a,b)=>(b.tripDate||'').localeCompare(a.tripDate||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')); const good=trips.filter(t=>t.resultLevel==='很好').length, mid=trips.filter(t=>t.resultLevel==='一般').length, bad=trips.filter(t=>t.resultLevel==='差').length, blank=trips.filter(t=>t.resultLevel==='打龟').length; const recent=trips.slice(0,5); const recentHtml=recent.length?recent.map(item=>`<div class="recent-item"><div class="recent-main"><div class="recent-date">${escapeHtml(item.tripDate||'未填日期')}</div><div class="recent-sub">海况：${escapeHtml(item.seaState||'未填')}　结果：${escapeHtml(item.resultLevel||'未填')}　鱼种：${escapeHtml(item.mainSpecies||'未填')}</div>${item.notes?`<div class="recent-sub">${escapeHtml(item.notes)}</div>`:''}</div><button class="btn-secondary btn-mini" type="button" data-area-fill="${escapeHtml(area)}">填到上面</button></div>`).join(''):'<div class="small muted">这个区域还没有记录。</div>'; els.areaInsightPanel.innerHTML=`<div class="insight-card"><div class="insight-title"><h3>${escapeHtml(area)}</h3><span class="pill-badge" style="background:linear-gradient(180deg,#f8fbff,#e9f2ff);color:#14314f;border-color:rgba(27,111,216,.16)">共 ${trips.length} 次</span></div><div class="mini-stats"><div class="mini-stat"><div class="small muted">很好</div><div class="n">${good}</div></div><div class="mini-stat"><div class="small muted">一般</div><div class="n">${mid}</div></div><div class="mini-stat"><div class="small muted">差</div><div class="n">${bad}</div></div><div class="mini-stat"><div class="small muted">打龟</div><div class="n">${blank}</div></div><div class="mini-stat"><div class="small muted">最近</div><div class="n">${recent.length}</div></div></div><div class="small muted" style="margin-bottom:8px;">最近几次</div><div class="recent-list">${recentHtml}</div></div>`;
@@ -192,16 +237,13 @@
     
     els.resetBtn.addEventListener('click', ()=>resetForm(false));
 
-    /* 核心修改：微信兼容版导出导入逻辑 */
-    
-    // 1. 点击导出按钮 -> 弹出导出代码框
+    /* 微信兼容版导出导入逻辑 */
     els.btnShowExport.addEventListener('click', () => {
         const payload={ trips:state.trips, areas:state.areas, exportedAt:new Date().toISOString() };
         els.exportTextarea.value = JSON.stringify(payload);
         els.exportModal.classList.add('active');
     });
 
-    // 2. 一键复制功能（兼容手机微信）
     els.btnCopyData.addEventListener('click', () => {
         els.exportTextarea.select();
         try {
@@ -213,13 +255,11 @@
         }
     });
 
-    // 3. 点击导入按钮 -> 弹出粘贴框
     els.btnShowImport.addEventListener('click', () => {
         els.importTextarea.value = '';
         els.importModal.classList.add('active');
     });
 
-    // 4. 确认恢复数据
     els.btnConfirmImport.addEventListener('click', () => {
         const text = els.importTextarea.value.trim();
         if(!text) return alert('你还没粘贴内容呢！');
@@ -254,7 +294,21 @@
     });
     
     const resetToPage1 = ()=>{ state.currentPage=1; renderList(); };
-    els.searchInput.addEventListener('input', resetToPage1); els.filterArea.addEventListener('change', resetToPage1); els.filterResult.addEventListener('change', resetToPage1);
+    
+    // 绑定所有的筛选控件
+    els.searchInput.addEventListener('input', resetToPage1); 
+    els.filterArea.addEventListener('change', resetToPage1); 
+    els.filterResult.addEventListener('change', resetToPage1);
+    els.filterDate.addEventListener('change', resetToPage1); // 日期选择变化时也自动搜索
+    
+    // 一键重置筛选条件的按钮逻辑
+    els.clearFilterBtn.addEventListener('click', () => {
+        els.filterDate.value = '';
+        els.searchInput.value = '';
+        els.filterArea.value = '';
+        els.filterResult.value = '';
+        resetToPage1(); // 清空后重新显示全部
+    });
     
     els.prevPageBtn.addEventListener('click', ()=>{ if(state.currentPage>1){ state.currentPage--; renderList(); } });
     els.nextPageBtn.addEventListener('click', ()=>{ const total=Math.max(1, Math.ceil(filteredTripsBase().length / PAGE_SIZE)); if(state.currentPage<total){ state.currentPage++; renderList(); } });
