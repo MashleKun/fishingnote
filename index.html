@@ -12,7 +12,7 @@
     .hero{position:relative;overflow:hidden;border-radius:32px;box-shadow:0 28px 60px rgba(0,0,0,.26);margin-bottom:16px;min-height:250px;background:linear-gradient(135deg,rgba(10,39,82,.76),rgba(5,19,43,.54));backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.16)}
     .hero-media{position:absolute;inset:0;background:url('./bg.jpg') center/cover no-repeat;opacity:.72;transform:scale(1.02)}.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,22,46,.30),rgba(6,20,41,.70) 62%, rgba(6,20,41,.82))}
     .hero-inner{position:relative;z-index:2;padding:20px;display:flex;gap:18px;align-items:flex-end;min-height:250px;flex-wrap:wrap}.hero-avatar{width:92px;height:92px;border-radius:50%;background:url('./avatar.jpg') center/cover no-repeat;border:3px solid rgba(255,255,255,.8);box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .hero-copy{flex:1 1 340px;color:#fff;min-width:0}.hero h1{margin:0 0 8px;font-size:32px;line-height:1.15;letter-spacing:.4px;text-shadow:0 4px 18px rgba(0,0,0,.22)}.hero p{margin:0;font-size:14px;line-height:1.75;max-width:620px;opacity:.96}.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hero-badge,.pill-badge{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;backdrop-filter:blur(6px)}.hero-status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:900}.dot{width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+    .hero-copy{flex:1 1 340px;color:#fff;min-width:0}.hero h1{margin:0 0 8px;font-size:32px;line-height:1.15;letter-spacing:.4px;text-shadow:0 4px 18px rgba(0,0,0,.22)}.hero p{margin:0;font-size:14px;line-height:1.75;max-width:620px;opacity:.96}.hero-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.hero-badge,.pill-badge{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;backdrop-filter:blur(6px)}.hero-status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:999px;font-size:12px;font-weight:900}.dot{width:10px;height:10px;border-radius:50%;background:#4caf50;box-shadow:0 0 0 4px rgba(76,175,80,.28)}
     .card{background:rgba(255,255,255,.90);border:1px solid rgba(255,255,255,.34);border-radius:26px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px;backdrop-filter:blur(14px)}.card-header{padding:16px 16px 12px;border-bottom:1px solid rgba(20,49,79,.06);background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(255,255,255,.80))}.card-header h2{margin:0;font-size:20px;line-height:1.2}.card-body{padding:16px}.muted{color:var(--muted)}.small{font-size:13px}
     .form-grid{display:grid;grid-template-columns:1fr;gap:13px}@media(min-width:720px){.form-grid.two{grid-template-columns:1fr 1fr}}.field{display:flex;flex-direction:column;gap:7px}label{font-size:14px;color:var(--muted);font-weight:900;letter-spacing:.15px}
     input,textarea,select{width:100%;border:1px solid rgba(27,111,216,.12);border-radius:17px;padding:12px 13px;font-size:16px;background:rgba(255,255,255,.96);color:var(--text);outline:none;-webkit-appearance:none;appearance:none;transition:.18s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,.7)}textarea{min-height:120px;resize:vertical}input:focus,textarea:focus,select:focus{border-color:rgba(27,111,216,.42);box-shadow:0 0 0 5px rgba(27,111,216,.10);transform:translateY(-1px)}
@@ -26,81 +26,286 @@
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 8px;padding-left:8px}.chip{background:var(--chip);color:var(--text);padding:7px 10px;border-radius:999px;font-size:13px;font-weight:900;border:1px solid rgba(27,111,216,.08)}.chip.result-good{background:var(--good);color:#256029}.chip.result-mid{background:var(--mid);color:#0d4ea8}.chip.result-bad{background:var(--bad);color:#a45b00}.chip.result-blank{background:var(--blank);color:#a7442d}
     .list{display:grid;gap:12px}.item{border:1px solid rgba(27,111,216,.10);border-radius:22px;padding:15px;background:linear-gradient(180deg,#ffffff,#fbfdff);box-shadow:var(--shadow2);position:relative;overflow:hidden}.item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(180deg,#2a7cf0,#14b8a6);border-radius:0 10px 10px 0}.item-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;flex-wrap:wrap;padding-left:8px}.item-title{font-size:22px;font-weight:900;margin:0 0 6px;line-height:1.28}.item-actions{display:flex;gap:8px;flex-wrap:wrap;width:100%}.item-actions button{flex:1 1 110px}
     .empty{text-align:center;color:var(--muted);padding:28px 16px;border:1px dashed rgba(27,111,216,.16);border-radius:20px;background:linear-gradient(180deg,#fbfdff,#f5f9ff);line-height:1.85}.hide{display:none!important}.status{margin-top:10px;border-radius:16px;padding:11px 13px;font-size:14px;line-height:1.6;font-weight:900}.status.ok{background:#e8f5e9;color:#2e7d32}.status.warn{background:#fff3e0;color:#ef6c00}
-    .lock-screen{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(5,16,31,.52);backdrop-filter:blur(10px);z-index:9999}.lock-card{width:min(100%,420px);background:rgba(255,255,255,.94);border:1px solid rgba(255,255,255,.48);border-radius:26px;box-shadow:0 24px 54px rgba(0,0,0,.24);overflow:hidden}.lock-top{position:relative;min-height:150px;background:url('./bg.jpg') center/cover no-repeat}.lock-top::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,19,33,.16),rgba(8,19,33,.55))}.lock-avatar{position:absolute;left:50%;bottom:-34px;transform:translateX(-50%);width:88px;height:88px;border-radius:50%;background:url('./avatar.jpg') center/cover no-repeat;border:4px solid #fff;box-shadow:0 10px 26px rgba(0,0,0,.20);z-index:2}.lock-body{padding:52px 18px 18px;text-align:center}.lock-title{font-size:22px;font-weight:900;margin:0 0 6px}.lock-sub{font-size:14px;color:var(--muted);line-height:1.65;margin:0 0 14px}.lock-help{font-size:12px;color:var(--muted);line-height:1.65;margin-top:10px}.lock-error{margin-top:10px;padding:10px 12px;border-radius:14px;background:#fff3e0;color:#ef6c00;font-size:14px;font-weight:800;display:none}
     @media(max-width:700px){.mini-stats{grid-template-columns:repeat(3,1fr)}}@media(max-width:640px){.hero{min-height:240px}.hero-inner{min-height:240px;padding:18px}.hero h1{font-size:26px}.hero-avatar{width:82px;height:82px}.item-title{font-size:20px}.area-row{align-items:flex-start}.area-row-actions{width:100%}.recent-item{flex-direction:column}.mini-stats{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head>
 <body>
-  <div id="lockScreen" class="lock-screen"><div class="lock-card"><div class="lock-top"><div class="lock-avatar"></div></div><div class="lock-body"><h2 class="lock-title">请输入密码</h2><p class="lock-sub">输入密码后，就能查看和记录内容。</p><div class="row-inline"><input id="lockCode" type="password" placeholder="请输入密码" /><button id="unlockBtn" class="btn-primary" type="button">进入</button></div><div id="lockError" class="lock-error"></div><div class="lock-help">只有知道密码的人，才能查看和记录内容。</div></div></div></div>
   <div class="container">
-    <section class="hero"><div class="hero-media"></div><div class="hero-overlay"></div><div class="hero-inner"><div class="hero-avatar"></div><div class="hero-copy"><h1>出海记录本</h1><p>每次回来顺手记一下，后面想翻哪天去过哪里、鱼情怎么样，就一眼找得到。</p><div class="hero-badges"><span class="hero-badge">常用区域一键填</span><span class="hero-badge">区域情况下拉看</span><span class="hero-badge">历史记录分页翻</span></div><div class="hero-status"><span class="dot"></span><span id="cloudStateText">可以开始记录</span></div></div></div></section>
+    <section class="hero"><div class="hero-media"></div><div class="hero-overlay"></div><div class="hero-inner"><div class="hero-avatar"></div><div class="hero-copy"><h1>出海记录本</h1><p>每次回来顺手记一下，后面想翻哪天去过哪里、鱼情怎么样，就一眼找得到。</p><div class="hero-badges"><span class="hero-badge">常用区域一键填</span><span class="hero-badge">区域情况下拉看</span><span class="hero-badge">历史记录分页翻</span></div><div class="hero-status"><span class="dot"></span><span id="cloudStateText">本地数据已就绪</span></div></div></div></section>
 
-    <section class="card"><div class="card-header"><h2 id="formTitle">记一条新的</h2></div><div class="card-body"><form id="tripForm"><input type="hidden" id="tripId" /><div class="form-grid two"><div class="field"><label for="tripDate">日期</label><input id="tripDate" type="date" required /></div><div class="field"><label for="tripAreaInput">区域</label><input id="tripAreaInput" type="text" placeholder="可以直接输入，例如：外海 / 三门附近 / 油井南" required /><div class="area-box"><div class="area-head"><div class="small muted">常用区域（点一下就能填）</div><button id="toggleAreaManageBtn" type="button" class="btn-secondary btn-mini">管理常用区域</button></div><div id="areaChips" class="area-chips"></div><div class="row-inline" style="margin-top:10px;"><input id="newAreaInput" type="text" placeholder="新增一个常用区域" /><button id="addAreaBtn" type="button" class="btn-secondary">加入常用区域</button></div><div id="areaManageBox" class="area-manage hide"><div id="areaManageList" class="area-manage-list"></div><div class="area-manage-actions"><button id="restoreDefaultAreasBtn" type="button" class="btn-secondary btn-mini">恢复默认区域</button></div></div></div></div><div class="field"><label for="departTime">出发时间</label><input id="departTime" type="time" /></div><div class="field"><label for="returnTime">回港时间</label><input id="returnTime" type="time" /></div><div class="field"><label for="peopleCount">人数</label><input id="peopleCount" type="number" min="1" max="30" step="1" placeholder="例如 4" /></div><div class="field"><label for="seaState">海况</label><select id="seaState"><option value="">请选择</option><option>平静</option><option>一般</option><option>有浪</option><option>风大</option></select></div><div class="field"><label for="resultLevel">结果</label><select id="resultLevel"><option value="">请选择</option><option>很好</option><option>一般</option><option>差</option><option>打龟</option></select></div><div class="field"><label for="mainSpecies">主要鱼种</label><input id="mainSpecies" type="text" placeholder="例如：黄脚立、石斑、杂鱼" /></div><div class="field" style="grid-column:1 / -1;"><label for="notes">备注</label><textarea id="notes" placeholder="例如：早水有口，午后没什么鱼；水色一般；今天先去三门附近后转外海。"></textarea></div></div><div class="actions" style="margin-top:14px;"><button class="btn-primary" type="submit">保存这次记录</button><button class="btn-secondary" type="button" id="resetBtn">清空重填</button></div><div id="statusBox" class="status hide"></div></form></div></section>
+    <section class="card"><div class="card-header"><h2 id="formTitle">记一条新的</h2></div><div class="card-body"><form id="tripForm"><input type="hidden" id="tripId" /><div class="form-grid two"><div class="field"><label for="tripDate">日期 (必填)</label><input id="tripDate" type="date" /></div><div class="field"><label for="tripAreaInput">区域 (必填)</label><input id="tripAreaInput" type="text" placeholder="可以直接输入，例如：外海 / 三门附近" /><div class="area-box"><div class="area-head"><div class="small muted">常用区域（点一下就能填）</div><button id="toggleAreaManageBtn" type="button" class="btn-secondary btn-mini">管理常用区域</button></div><div id="areaChips" class="area-chips"></div><div class="row-inline" style="margin-top:10px;"><input id="newAreaInput" type="text" placeholder="新增一个常用区域" /><button id="addAreaBtn" type="button" class="btn-secondary">加入常用区域</button></div><div id="areaManageBox" class="area-manage hide"><div id="areaManageList" class="area-manage-list"></div><div class="area-manage-actions"><button id="restoreDefaultAreasBtn" type="button" class="btn-secondary btn-mini">恢复默认区域</button></div></div></div></div><div class="field"><label for="departTime">出发时间</label><input id="departTime" type="time" /></div><div class="field"><label for="returnTime">回港时间</label><input id="returnTime" type="time" /></div><div class="field"><label for="peopleCount">人数</label><input id="peopleCount" type="number" min="1" max="30" step="1" placeholder="例如 4" /></div><div class="field"><label for="seaState">海况</label><select id="seaState"><option value="">请选择</option><option>平静</option><option>一般</option><option>有浪</option><option>风大</option></select></div><div class="field"><label for="resultLevel">结果</label><select id="resultLevel"><option value="">请选择</option><option>很好</option><option>一般</option><option>差</option><option>打龟</option></select></div><div class="field"><label for="mainSpecies">主要鱼种</label><input id="mainSpecies" type="text" placeholder="例如：黄脚立、石斑、杂鱼" /></div><div class="field" style="grid-column:1 / -1;"><label for="notes">备注</label><textarea id="notes" placeholder="例如：早水有口，午后没什么鱼；水色一般；今天先去三门附近后转外海。"></textarea></div></div><div class="actions" style="margin-top:14px;"><button class="btn-primary" type="submit">保存这次记录</button><button class="btn-secondary" type="button" id="resetBtn">清空重填</button></div><div id="statusBox" class="status hide"></div></form></div></section>
 
     <section class="card"><div class="card-header"><div class="toolbar"><h2>区域情况</h2><div class="toolbar-right"><select id="areaInsightSelect"><option value="__ALL__">全部区域</option></select></div></div></div><div class="card-body"><div id="areaInsightPanel"></div></div></section>
 
-    <details class="backup-box"><summary>备份 / 恢复（平时不用点）</summary><div class="backup-body"><div class="stats"><div class="stat"><div class="small muted">总记录数</div><div class="num" id="totalTrips">0</div></div><div class="stat"><div class="small muted">打龟次数</div><div class="num" id="totalBlank">0</div></div></div><div class="actions"><button class="btn-ok" type="button" id="exportBtn">导出备份</button><label class="label-btn" for="importFile">导入备份</label><input id="importFile" type="file" accept="application/json" class="hide" /><button class="btn-danger" type="button" id="clearAllBtn">清空全部记录</button></div><div class="small muted" style="margin-top:8px;">这里主要是留作备份，平时一般不用点。</div></div></details>
+    <details class="backup-box"><summary>备份 / 恢复（平时不用点）</summary><div class="backup-body"><div class="stats"><div class="stat"><div class="small muted">总记录数</div><div class="num" id="totalTrips">0</div></div><div class="stat"><div class="small muted">打龟次数</div><div class="num" id="totalBlank">0</div></div></div><div class="actions"><button class="btn-ok" type="button" id="exportBtn">导出备份</button><label class="label-btn" for="importFile">导入备份</label><input id="importFile" type="file" accept="application/json" class="hide" /><button class="btn-danger" type="button" id="clearAllBtn">清空全部记录</button></div><div class="small muted" style="margin-top:8px;">因为代码部署在 GitHub Pages，数据是存在当前浏览器的。如果换手机、重装微信或清理缓存前，请务必先【导出备份】！</div></div></details>
 
     <section class="card"><div class="card-header"><div class="toolbar"><h2>以前记过的</h2><div class="toolbar-right filters"><input id="searchInput" type="text" placeholder="搜区域 / 鱼种 / 备注" style="min-width:160px;" /><select id="filterArea"><option value="">全部区域</option></select><select id="filterResult"><option value="">全部结果</option><option>很好</option><option>一般</option><option>差</option><option>打龟</option></select></div></div></div><div class="card-body"><div id="tripList" class="list"></div><div class="pagination" style="margin-top:12px;justify-content:space-between"><button id="prevPageBtn" class="btn-secondary btn-mini" type="button">上一页</button><div class="small muted" id="pageInfo">第 1 页</div><button id="nextPageBtn" class="btn-secondary btn-mini" type="button">下一页</button></div></div></section>
   </div>
   <script>
     const DEFAULT_AREAS = ['澳头近海', '三门岛附近', '外海', '油井方向'];
-    const SESSION_KEY = 'trip_access_code';
+    const STORAGE_TRIPS = 'gh-aotou-trips';
+    const STORAGE_AREAS = 'gh-aotou-areas';
     const PAGE_SIZE = 10;
-    const els = { lockScreen:document.getElementById('lockScreen'), lockCode:document.getElementById('lockCode'), unlockBtn:document.getElementById('unlockBtn'), lockError:document.getElementById('lockError'), tripId:document.getElementById('tripId'), tripDate:document.getElementById('tripDate'), tripAreaInput:document.getElementById('tripAreaInput'), newAreaInput:document.getElementById('newAreaInput'), addAreaBtn:document.getElementById('addAreaBtn'), areaChips:document.getElementById('areaChips'), toggleAreaManageBtn:document.getElementById('toggleAreaManageBtn'), areaManageBox:document.getElementById('areaManageBox'), areaManageList:document.getElementById('areaManageList'), restoreDefaultAreasBtn:document.getElementById('restoreDefaultAreasBtn'), areaInsightSelect:document.getElementById('areaInsightSelect'), areaInsightPanel:document.getElementById('areaInsightPanel'), departTime:document.getElementById('departTime'), returnTime:document.getElementById('returnTime'), peopleCount:document.getElementById('peopleCount'), seaState:document.getElementById('seaState'), resultLevel:document.getElementById('resultLevel'), mainSpecies:document.getElementById('mainSpecies'), notes:document.getElementById('notes'), tripForm:document.getElementById('tripForm'), formTitle:document.getElementById('formTitle'), tripList:document.getElementById('tripList'), totalTrips:document.getElementById('totalTrips'), totalBlank:document.getElementById('totalBlank'), resetBtn:document.getElementById('resetBtn'), exportBtn:document.getElementById('exportBtn'), importFile:document.getElementById('importFile'), clearAllBtn:document.getElementById('clearAllBtn'), searchInput:document.getElementById('searchInput'), filterArea:document.getElementById('filterArea'), filterResult:document.getElementById('filterResult'), prevPageBtn:document.getElementById('prevPageBtn'), nextPageBtn:document.getElementById('nextPageBtn'), pageInfo:document.getElementById('pageInfo'), statusBox:document.getElementById('statusBox'), cloudStateText:document.getElementById('cloudStateText') };
-    let state = { trips: [], areas: [], code: '', areaManageOpen: false, currentPage: 1 };
+    
+    const els = { tripId:document.getElementById('tripId'), tripDate:document.getElementById('tripDate'), tripAreaInput:document.getElementById('tripAreaInput'), newAreaInput:document.getElementById('newAreaInput'), addAreaBtn:document.getElementById('addAreaBtn'), areaChips:document.getElementById('areaChips'), toggleAreaManageBtn:document.getElementById('toggleAreaManageBtn'), areaManageBox:document.getElementById('areaManageBox'), areaManageList:document.getElementById('areaManageList'), restoreDefaultAreasBtn:document.getElementById('restoreDefaultAreasBtn'), areaInsightSelect:document.getElementById('areaInsightSelect'), areaInsightPanel:document.getElementById('areaInsightPanel'), departTime:document.getElementById('departTime'), returnTime:document.getElementById('returnTime'), peopleCount:document.getElementById('peopleCount'), seaState:document.getElementById('seaState'), resultLevel:document.getElementById('resultLevel'), mainSpecies:document.getElementById('mainSpecies'), notes:document.getElementById('notes'), tripForm:document.getElementById('tripForm'), formTitle:document.getElementById('formTitle'), tripList:document.getElementById('tripList'), totalTrips:document.getElementById('totalTrips'), totalBlank:document.getElementById('totalBlank'), resetBtn:document.getElementById('resetBtn'), exportBtn:document.getElementById('exportBtn'), importFile:document.getElementById('importFile'), clearAllBtn:document.getElementById('clearAllBtn'), searchInput:document.getElementById('searchInput'), filterArea:document.getElementById('filterArea'), filterResult:document.getElementById('filterResult'), prevPageBtn:document.getElementById('prevPageBtn'), nextPageBtn:document.getElementById('nextPageBtn'), pageInfo:document.getElementById('pageInfo'), statusBox:document.getElementById('statusBox') };
+    
+    let state = { trips: [], areas: [], areaManageOpen: false, currentPage: 1 };
+    
     function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;'); }
     function showStatus(text, type='ok'){ els.statusBox.textContent=text; els.statusBox.className='status '+type; els.statusBox.classList.remove('hide'); if(type==='ok') setTimeout(()=>els.statusBox.classList.add('hide'),2500); }
-    function showLockError(text){ els.lockError.textContent=text; els.lockError.style.display='block'; }
-    function hideLockError(){ els.lockError.style.display='none'; els.lockError.textContent=''; }
-    function todayStr(){ const n=new Date(); return `${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}-${String(n.getDate()).padStart(2,'0')}`; }
+    
+    // 兼容所有浏览器的日期生成
+    function todayStr(){ 
+        const n=new Date(); 
+        const y=n.getFullYear();
+        const m=(n.getMonth()+1).toString().padStart(2,'0');
+        const d=n.getDate().toString().padStart(2,'0');
+        return `${y}-${m}-${d}`; 
+    }
+    
     function uid(){ return 'trip_' + Date.now() + '_' + Math.random().toString(36).slice(2,8); }
     function nl2brSafe(text=''){ return escapeHtml(text).replaceAll('\n','<br>'); }
     function getAreaValue(){ return (els.tripAreaInput.value||'').trim(); }
-    function getStoredCode(){ try{ return sessionStorage.getItem(SESSION_KEY)||''; }catch{return '';} }
-    function setStoredCode(code){ try{ sessionStorage.setItem(SESSION_KEY, code); }catch{} }
-    async function api(path, options={}){ const headers={ 'Content-Type':'application/json', ...(options.headers||{}) }; if(state.code) headers['X-Site-Code']=state.code; const res=await fetch(path,{ headers, ...options }); const text=await res.text(); let data=null; try{ data=text?JSON.parse(text):null; }catch{ data={raw:text}; } if(!res.ok) throw new Error((data&&(data.error||data.message)) || `请求失败：${res.status}`); return data; }
-    async function verifyCode(code){ const res=await fetch('/api/auth',{ method:'POST', headers:{ 'Content-Type':'application/json' }, body:JSON.stringify({ code }) }); const data=await res.json(); if(!res.ok||!data.ok) throw new Error(data.error||'密码不对'); return data; }
-    async function loadData(){ const data=await api('/api/data'); state.trips=Array.isArray(data.trips)?data.trips:[]; state.areas=Array.isArray(data.areas)?data.areas:[]; els.cloudStateText.textContent='可以开始记录'; }
-    async function saveData(payload){ return await api('/api/data',{ method:'POST', body:JSON.stringify(payload) }); }
+    
+    // 本地存储读写核心
+    function loadLocalData(){
+        try {
+            const t = localStorage.getItem(STORAGE_TRIPS);
+            state.trips = t ? JSON.parse(t) : [];
+            const a = localStorage.getItem(STORAGE_AREAS);
+            state.areas = a ? JSON.parse(a) : [...DEFAULT_AREAS];
+        } catch(e) {
+            state.trips = [];
+            state.areas = [...DEFAULT_AREAS];
+        }
+    }
+    
+    function saveLocalData(){
+        try {
+            localStorage.setItem(STORAGE_TRIPS, JSON.stringify(state.trips));
+            localStorage.setItem(STORAGE_AREAS, JSON.stringify(state.areas));
+        } catch(e) {
+            showStatus('存储空间可能已满，或者处于无痕模式下无法保存。', 'warn');
+        }
+    }
+
     function allHistoricalAreas(){ return [...new Set([...(state.areas||[]), ...state.trips.map(t => (t.tripArea||'').trim()).filter(Boolean)])].sort((a,b)=>a.localeCompare(b,'zh-CN')); }
+    
     function renderAreaSelects(){ const areas=allHistoricalAreas(); const opts = ['<option value="">全部区域</option>'].concat(areas.map(a=>`<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`)).join(''); const oldFilter=els.filterArea.value; els.filterArea.innerHTML=opts; if([...els.filterArea.options].some(o=>o.value===oldFilter)) els.filterArea.value=oldFilter; const oldInsight=els.areaInsightSelect.value; els.areaInsightSelect.innerHTML='<option value="__ALL__">全部区域</option>' + areas.map(a=>`<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`).join(''); if([...els.areaInsightSelect.options].some(o=>o.value===oldInsight)) els.areaInsightSelect.value=oldInsight; }
+    
     function renderAreaChips(activeValue=''){ els.areaChips.innerHTML=state.areas.map(area=>`<button class="area-chip${area===activeValue.trim()?' active':''}" type="button" data-area="${escapeHtml(area)}">${escapeHtml(area)}</button>`).join(''); }
+    
     function renderAreaManage(){ els.areaManageBox.classList.toggle('hide', !state.areaManageOpen); els.toggleAreaManageBtn.textContent = state.areaManageOpen ? '收起管理' : '管理常用区域'; if(!state.areaManageOpen) return; if(!state.areas.length){ els.areaManageList.innerHTML='<div class="small muted">还没有常用区域。</div>'; return; } els.areaManageList.innerHTML=state.areas.map(area=>`<div class="area-row"><div class="area-row-name">${escapeHtml(area)}</div><div class="area-row-actions"><button class="btn-secondary btn-mini" type="button" data-area-edit="${escapeHtml(area)}">改名</button><button class="btn-danger btn-mini" type="button" data-area-delete="${escapeHtml(area)}">删除</button></div></div>`).join(''); }
+    
     function renderStats(){ els.totalTrips.textContent=state.trips.length; els.totalBlank.textContent=state.trips.filter(t=>(t.resultLevel||'')==='打龟').length; }
+    
     function resultClass(result){ if(result==='很好') return 'result-good'; if(result==='一般') return 'result-mid'; if(result==='差') return 'result-bad'; if(result==='打龟') return 'result-blank'; return ''; }
+    
     function filteredTripsBase(){ const q=(els.searchInput.value||'').trim().toLowerCase(); const resultFilter=els.filterResult.value; const areaFilter=els.filterArea.value; return [...state.trips].filter(item=>{ const hay=[item.tripArea,item.mainSpecies,item.notes,item.tripDate,item.resultLevel].filter(Boolean).join(' | ').toLowerCase(); return (!q||hay.includes(q)) && (!resultFilter||item.resultLevel===resultFilter) && (!areaFilter || (item.tripArea||'').trim()===areaFilter); }).sort((a,b)=>(b.tripDate||'').localeCompare(a.tripDate||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')); }
+    
     function renderAreaInsights(){ const selected=els.areaInsightSelect.value; const areas=allHistoricalAreas(); if(selected==='__ALL__'){ if(!areas.length){ els.areaInsightPanel.innerHTML='<div class="empty">还没有可看的区域情况。先记几条，再回来看看。</div>'; return; } const summary = areas.map(area=>{ const trips=state.trips.filter(t=>(t.tripArea||'').trim()===area).sort((a,b)=>(b.tripDate||'').localeCompare(a.tripDate||'')); const blank=trips.filter(t=>t.resultLevel==='打龟').length; const last=trips[0]?.tripDate||'—'; return `<div class="summary-card"><div class="small muted">${escapeHtml(area)}</div><div class="n">${trips.length}</div><div class="small muted">打龟 ${blank} 次　最近 ${escapeHtml(last)}</div><div style="margin-top:8px"><button class="btn-secondary btn-mini" type="button" data-insight-jump="${escapeHtml(area)}">查看这个区域</button></div></div>`; }).join(''); els.areaInsightPanel.innerHTML=`<div class="insight-summary">${summary}</div>`; return; }
       const area=selected; const trips=state.trips.filter(t=>(t.tripArea||'').trim()===area).sort((a,b)=>(b.tripDate||'').localeCompare(a.tripDate||'')||(b.updatedAt||'').localeCompare(a.updatedAt||'')); const good=trips.filter(t=>t.resultLevel==='很好').length, mid=trips.filter(t=>t.resultLevel==='一般').length, bad=trips.filter(t=>t.resultLevel==='差').length, blank=trips.filter(t=>t.resultLevel==='打龟').length; const recent=trips.slice(0,5); const recentHtml=recent.length?recent.map(item=>`<div class="recent-item"><div class="recent-main"><div class="recent-date">${escapeHtml(item.tripDate||'未填日期')}</div><div class="recent-sub">海况：${escapeHtml(item.seaState||'未填')}　结果：${escapeHtml(item.resultLevel||'未填')}　鱼种：${escapeHtml(item.mainSpecies||'未填')}</div>${item.notes?`<div class="recent-sub">${escapeHtml(item.notes)}</div>`:''}</div><button class="btn-secondary btn-mini" type="button" data-area-fill="${escapeHtml(area)}">填到上面</button></div>`).join(''):'<div class="small muted">这个区域还没有记录。</div>'; els.areaInsightPanel.innerHTML=`<div class="insight-card"><div class="insight-title"><h3>${escapeHtml(area)}</h3><span class="pill-badge" style="background:linear-gradient(180deg,#f8fbff,#e9f2ff);color:#14314f;border-color:rgba(27,111,216,.16)">共 ${trips.length} 次</span></div><div class="mini-stats"><div class="mini-stat"><div class="small muted">很好</div><div class="n">${good}</div></div><div class="mini-stat"><div class="small muted">一般</div><div class="n">${mid}</div></div><div class="mini-stat"><div class="small muted">差</div><div class="n">${bad}</div></div><div class="mini-stat"><div class="small muted">打龟</div><div class="n">${blank}</div></div><div class="mini-stat"><div class="small muted">最近</div><div class="n">${recent.length}</div></div></div><div class="small muted" style="margin-bottom:8px;">最近几次</div><div class="recent-list">${recentHtml}</div></div>`;
     }
+    
     function renderList(){ const trips=filteredTripsBase(); const totalPages=Math.max(1, Math.ceil(trips.length / PAGE_SIZE)); if(state.currentPage>totalPages) state.currentPage=totalPages; const start=(state.currentPage-1)*PAGE_SIZE; const pageTrips=trips.slice(start,start+PAGE_SIZE); if(!pageTrips.length){ els.tripList.innerHTML='<div class="empty">没有符合条件的记录。</div>'; } else { els.tripList.innerHTML=pageTrips.map(item=>{ const people=item.peopleCount?`${escapeHtml(String(item.peopleCount))}人`:'人数未填'; const sea=item.seaState||'海况未填'; const species=item.mainSpecies||'鱼种未填'; const result=item.resultLevel||'结果未填'; const note=item.notes?nl2brSafe(item.notes):'<span class="muted">无备注</span>'; return `<article class="item"><div class="item-top"><div><div class="item-title">${escapeHtml(item.tripDate||'未填日期')}｜${escapeHtml(item.tripArea||'未填区域')}</div><div class="muted small">出发：${escapeHtml(item.departTime||'--:--')}　回港：${escapeHtml(item.returnTime||'--:--')}</div></div><div class="item-actions"><button class="btn-secondary" type="button" data-copy="${escapeHtml(item.id)}">复制这条</button><button class="btn-secondary" type="button" data-edit="${escapeHtml(item.id)}">编辑</button><button class="btn-danger" type="button" data-delete="${escapeHtml(item.id)}">删除</button></div></div><div class="chips"><span class="chip">${escapeHtml(people)}</span><span class="chip">${escapeHtml(sea)}</span><span class="chip ${resultClass(item.resultLevel)}">${escapeHtml(result)}</span><span class="chip">${escapeHtml(species)}</span></div><div class="small" style="line-height:1.75;padding-left:8px;">${note}</div></article>`; }).join(''); }
       els.pageInfo.textContent=`第 ${state.currentPage} / ${totalPages} 页`; els.prevPageBtn.disabled=state.currentPage<=1; els.nextPageBtn.disabled=state.currentPage>=totalPages;
     }
+    
     function render(){ renderStats(); renderAreaSelects(); renderAreaChips(getAreaValue()); renderAreaManage(); renderAreaInsights(); renderList(); }
+    
     function fillForm(item){ els.tripId.value=item.id||''; els.tripDate.value=item.tripDate||todayStr(); els.tripAreaInput.value=item.tripArea||''; renderAreaChips(item.tripArea||''); els.departTime.value=item.departTime||''; els.returnTime.value=item.returnTime||''; els.peopleCount.value=item.peopleCount||''; els.seaState.value=item.seaState||''; els.resultLevel.value=item.resultLevel||''; els.mainSpecies.value=item.mainSpecies||''; els.notes.value=item.notes||''; els.formTitle.textContent=item.id?'改这条记录':'记一条新的'; window.scrollTo({top:0, behavior:'smooth'}); }
+    
     function resetForm(keepDate=true){ const date=keepDate?(els.tripDate.value||todayStr()):todayStr(); els.tripForm.reset(); els.tripId.value=''; els.tripDate.value=date; els.tripAreaInput.value=''; els.newAreaInput.value=''; els.formTitle.textContent='记一条新的'; renderAreaChips(''); els.statusBox.classList.add('hide'); }
+    
     function prepareCopy(item){ fillForm({ ...item, id:'', tripDate:todayStr(), departTime:'', returnTime:'' }); els.tripId.value=''; els.formTitle.textContent='按这条改一改再保存'; showStatus('已经带出这条内容，改一改再保存。','ok'); }
-    async function unlock(){ hideLockError(); const code=(els.lockCode.value||'').trim(); if(!code) return showLockError('先输入密码。'); try{ await verifyCode(code); state.code=code; setStoredCode(code); els.lockScreen.style.display='none'; await loadData(); render(); showStatus('可以开始记录。','ok'); }catch(err){ showLockError(err.message||'密码不对'); } }
-    els.unlockBtn.addEventListener('click', unlock); els.lockCode.addEventListener('keydown', (e)=>{ if(e.key==='Enter') unlock(); });
+    
     els.toggleAreaManageBtn.addEventListener('click', ()=>{ state.areaManageOpen=!state.areaManageOpen; renderAreaManage(); });
-    els.restoreDefaultAreasBtn.addEventListener('click', async()=>{ try{ const data=await saveData({ action:'restoreDefaultAreas' }); state.areas=data.areas||state.areas; state.trips=data.trips||state.trips; render(); showStatus('已经恢复默认区域。','ok'); }catch(err){ showStatus(err.message||'恢复失败。','warn'); } });
+    
+    // 恢复默认区域逻辑
+    els.restoreDefaultAreasBtn.addEventListener('click', ()=>{ 
+        state.areas = [...DEFAULT_AREAS];
+        saveLocalData();
+        render(); 
+        showStatus('已经恢复默认区域。','ok'); 
+    });
+    
     els.areaInsightSelect.addEventListener('change', renderAreaInsights);
+    
     els.areaInsightPanel.addEventListener('click', (e)=>{ const fillBtn=e.target.closest('[data-area-fill]'); const jumpBtn=e.target.closest('[data-insight-jump]'); if(jumpBtn){ els.areaInsightSelect.value = jumpBtn.getAttribute('data-insight-jump') || '__ALL__'; renderAreaInsights(); return; } if(fillBtn){ const area=fillBtn.getAttribute('data-area-fill')||''; els.tripAreaInput.value=area; renderAreaChips(area); window.scrollTo({top:0, behavior:'smooth'}); } });
+    
     els.areaChips.addEventListener('click', (e)=>{ const btn=e.target.closest('[data-area]'); if(!btn) return; const area=btn.getAttribute('data-area')||''; els.tripAreaInput.value=area; renderAreaChips(area); });
-    els.areaManageList.addEventListener('click', async(e)=>{ const editBtn=e.target.closest('[data-area-edit]'); const delBtn=e.target.closest('[data-area-delete]'); if(editBtn){ const oldName=editBtn.getAttribute('data-area-edit')||''; const newName=(prompt('改成什么名字？', oldName)||'').trim(); if(!newName||newName===oldName) return; try{ const data=await saveData({ action:'renameArea', oldName, newName }); state.areas=data.areas||state.areas; state.trips=data.trips||state.trips; if(els.tripAreaInput.value.trim()===oldName) els.tripAreaInput.value=newName; render(); showStatus('已经改好。','ok'); }catch(err){ showStatus(err.message||'改名失败。','warn'); } return; } if(delBtn){ const name=delBtn.getAttribute('data-area-delete')||''; if(!confirm(`确定删除“${name}”吗？`)) return; try{ const data=await saveData({ action:'deleteArea', name }); state.areas=data.areas||state.areas; state.trips=data.trips||state.trips; if(els.tripAreaInput.value.trim()===name) els.tripAreaInput.value=''; render(); showStatus('已经删除。','ok'); }catch(err){ showStatus(err.message||'删除失败。','warn'); } } });
-    els.addAreaBtn.addEventListener('click', async()=>{ const value=(els.newAreaInput.value||'').trim(); if(!value) return showStatus('先写上区域名称。','warn'); try{ const data=await saveData({ action:'addArea', name:value }); state.areas=data.areas||state.areas; els.tripAreaInput.value=value; els.newAreaInput.value=''; render(); showStatus('已经加入常用区域。','ok'); }catch(err){ showStatus(err.message||'加入常用区域失败。','warn'); } });
+    
+    // 区域管理逻辑
+    els.areaManageList.addEventListener('click', (e)=>{ 
+        const editBtn=e.target.closest('[data-area-edit]'); 
+        const delBtn=e.target.closest('[data-area-delete]'); 
+        
+        if(editBtn){ 
+            const oldName=editBtn.getAttribute('data-area-edit')||''; 
+            const newName=(prompt('改成什么名字？', oldName)||'').trim(); 
+            if(!newName||newName===oldName) return; 
+            
+            const idx = state.areas.indexOf(oldName);
+            if(idx > -1) state.areas[idx] = newName;
+            state.trips.forEach(t => { if(t.tripArea === oldName) t.tripArea = newName; });
+            
+            saveLocalData();
+            if(els.tripAreaInput.value.trim()===oldName) els.tripAreaInput.value=newName; 
+            render(); 
+            showStatus('已经改好。','ok'); 
+            return; 
+        } 
+        
+        if(delBtn){ 
+            const name=delBtn.getAttribute('data-area-delete')||''; 
+            if(!confirm(`确定删除“${name}”吗？不会影响以前的记录。`)) return; 
+            
+            state.areas = state.areas.filter(a => a !== name);
+            saveLocalData();
+            if(els.tripAreaInput.value.trim()===name) els.tripAreaInput.value=''; 
+            render(); 
+            showStatus('已经删除。','ok'); 
+        } 
+    });
+    
+    // 添加区域逻辑
+    els.addAreaBtn.addEventListener('click', ()=>{ 
+        const value=(els.newAreaInput.value||'').trim(); 
+        if(!value) return showStatus('先写上区域名称。','warn'); 
+        
+        if(!state.areas.includes(value)) {
+            state.areas.push(value);
+            saveLocalData();
+        }
+        els.tripAreaInput.value=value; 
+        els.newAreaInput.value=''; 
+        render(); 
+        showStatus('已经加入常用区域。','ok'); 
+    });
+    
     els.tripAreaInput.addEventListener('input', ()=>renderAreaChips(getAreaValue()));
-    els.tripForm.addEventListener('submit', async(e)=>{ e.preventDefault(); const area=getAreaValue(); if(!els.tripDate.value||!area) return showStatus('日期和区域至少要填。','warn'); const trip={ id:els.tripId.value||uid(), tripDate:els.tripDate.value, tripArea:area, departTime:els.departTime.value, returnTime:els.returnTime.value, peopleCount:els.peopleCount.value, seaState:els.seaState.value, resultLevel:els.resultLevel.value, mainSpecies:(els.mainSpecies.value||'').trim(), notes:(els.notes.value||'').trim(), updatedAt:new Date().toISOString() }; try{ const data=await saveData({ action:'upsertTrip', trip }); state.trips=data.trips||state.trips; state.areas=data.areas||state.areas; state.currentPage=1; render(); resetForm(true); showStatus('已保存。','ok'); }catch(err){ showStatus(err.message||'保存失败。','warn'); } });
+    
+    // 保存表单逻辑
+    els.tripForm.addEventListener('submit', (e)=>{ 
+        e.preventDefault(); 
+        const dateVal = (els.tripDate.value || '').trim();
+        if(!dateVal) return showStatus('保存失败：请填写最上面的“日期”', 'warn');
+        
+        const area=getAreaValue(); 
+        if(!area) return showStatus('保存失败：请填写或点击选择“区域”','warn'); 
+        
+        const trip={ 
+            id:els.tripId.value||uid(), 
+            tripDate:els.tripDate.value, 
+            tripArea:area, 
+            departTime:els.departTime.value, 
+            returnTime:els.returnTime.value, 
+            peopleCount:els.peopleCount.value, 
+            seaState:els.seaState.value, 
+            resultLevel:els.resultLevel.value, 
+            mainSpecies:(els.mainSpecies.value||'').trim(), 
+            notes:(els.notes.value||'').trim(), 
+            updatedAt:new Date().toISOString() 
+        }; 
+        
+        const idx = state.trips.findIndex(t => t.id === trip.id);
+        if (idx >= 0) state.trips[idx] = trip;
+        else state.trips.push(trip);
+        
+        if (!state.areas.includes(trip.tripArea)) {
+            state.areas.push(trip.tripArea);
+        }
+        
+        saveLocalData();
+        state.currentPage=1; 
+        render(); 
+        resetForm(true); 
+        showStatus('已保存。','ok'); 
+    });
+    
     els.resetBtn.addEventListener('click', ()=>resetForm(false));
+    
     els.exportBtn.addEventListener('click', ()=>{ const payload={ trips:state.trips, areas:state.areas, exportedAt:new Date().toISOString() }; const blob=new Blob([JSON.stringify(payload,null,2)],{ type:'application/json;charset=utf-8' }); const a=document.createElement('a'); const url=URL.createObjectURL(blob); a.href=url; a.download=`出海记录备份_${todayStr()}.json`; a.click(); URL.revokeObjectURL(url); showStatus('备份文件已经导出。','ok'); });
-    els.importFile.addEventListener('change', async(e)=>{ const file=e.target.files?.[0]; if(!file) return; const reader=new FileReader(); reader.onload=async()=>{ try{ const raw=JSON.parse(reader.result); const trips=Array.isArray(raw)?raw:(Array.isArray(raw.trips)?raw.trips:null); const areas=Array.isArray(raw?.areas)?raw.areas:[]; if(!trips) throw new Error('文件格式不对'); if(!confirm(`确认导入这份备份吗？\n当前记录会被覆盖。\n记录条数：${trips.length}`)) return; const data=await saveData({ action:'importAll', trips, areas }); state.trips=data.trips||[]; state.areas=data.areas||[]; state.currentPage=1; render(); resetForm(false); showStatus('导入成功。','ok'); }catch(err){ showStatus(err.message||'导入失败。','warn'); } }; reader.readAsText(file,'utf-8'); e.target.value=''; });
-    els.clearAllBtn.addEventListener('click', async()=>{ if(!confirm('确定清空全部记录吗？这个操作不能撤销。')) return; try{ const data=await saveData({ action:'clearAll' }); state.trips=data.trips||[]; state.areas=data.areas||state.areas; state.currentPage=1; render(); resetForm(false); showStatus('已经清空。','ok'); }catch(err){ showStatus(err.message||'清空失败。','warn'); } });
+    
+    els.importFile.addEventListener('change', (e)=>{ 
+        const file=e.target.files?.[0]; 
+        if(!file) return; 
+        const reader=new FileReader(); 
+        reader.onload=()=>{ 
+            try{ 
+                const raw=JSON.parse(reader.result); 
+                const trips=Array.isArray(raw)?raw:(Array.isArray(raw.trips)?raw.trips:null); 
+                const areas=Array.isArray(raw?.areas)?raw.areas:[]; 
+                if(!trips) throw new Error('文件格式不对'); 
+                if(!confirm(`确认导入这份备份吗？\n当前记录会被覆盖。\n记录条数：${trips.length}`)) return; 
+                
+                state.trips = trips;
+                state.areas = areas.length ? areas : [...DEFAULT_AREAS];
+                saveLocalData();
+                
+                state.currentPage=1; 
+                render(); 
+                resetForm(false); 
+                showStatus('导入成功。','ok'); 
+            }catch(err){ 
+                showStatus('导入失败：文件格式错误','warn'); 
+            } 
+        }; 
+        reader.readAsText(file,'utf-8'); 
+        e.target.value=''; 
+    });
+    
+    els.clearAllBtn.addEventListener('click', ()=>{ 
+        if(!confirm('确定清空全部记录吗？这个操作不能撤销。')) return; 
+        state.trips = [];
+        saveLocalData();
+        state.currentPage=1; 
+        render(); 
+        resetForm(false); 
+        showStatus('已经清空。','ok'); 
+    });
+    
     const resetToPage1 = ()=>{ state.currentPage=1; renderList(); };
     els.searchInput.addEventListener('input', resetToPage1); els.filterArea.addEventListener('change', resetToPage1); els.filterResult.addEventListener('change', resetToPage1);
+    
     els.prevPageBtn.addEventListener('click', ()=>{ if(state.currentPage>1){ state.currentPage--; renderList(); } });
     els.nextPageBtn.addEventListener('click', ()=>{ const total=Math.max(1, Math.ceil(filteredTripsBase().length / PAGE_SIZE)); if(state.currentPage<total){ state.currentPage++; renderList(); } });
-    els.tripList.addEventListener('click', async(e)=>{ const copyBtn=e.target.closest('[data-copy]'); const editBtn=e.target.closest('[data-edit]'); const delBtn=e.target.closest('[data-delete]'); if(copyBtn){ const item=state.trips.find(t=>t.id===copyBtn.getAttribute('data-copy')); if(item) prepareCopy(item); return; } if(editBtn){ const item=state.trips.find(t=>t.id===editBtn.getAttribute('data-edit')); if(item) fillForm(item); return; } if(delBtn){ const id=delBtn.getAttribute('data-delete'); if(!confirm('确定删除这条记录吗？')) return; try{ const data=await saveData({ action:'deleteTrip', id }); state.trips=data.trips||state.trips; state.areas=data.areas||state.areas; render(); showStatus('已经删除。','ok'); }catch(err){ showStatus(err.message||'删除失败。','warn'); } } });
-    (async function init(){ els.tripDate.value=todayStr(); const code=getStoredCode(); if(code){ try{ await verifyCode(code); state.code=code; els.lockScreen.style.display='none'; await loadData(); render(); showStatus('可以开始记录。','ok'); return; }catch{} } els.cloudStateText.textContent='先输入密码'; })();
+    
+    els.tripList.addEventListener('click', (e)=>{ 
+        const copyBtn=e.target.closest('[data-copy]'); 
+        const editBtn=e.target.closest('[data-edit]'); 
+        const delBtn=e.target.closest('[data-delete]'); 
+        
+        if(copyBtn){ 
+            const item=state.trips.find(t=>t.id===copyBtn.getAttribute('data-copy')); 
+            if(item) prepareCopy(item); 
+            return; 
+        } 
+        if(editBtn){ 
+            const item=state.trips.find(t=>t.id===editBtn.getAttribute('data-edit')); 
+            if(item) fillForm(item); 
+            return; 
+        } 
+        if(delBtn){ 
+            const id=delBtn.getAttribute('data-delete'); 
+            if(!confirm('确定删除这条记录吗？')) return; 
+            
+            state.trips = state.trips.filter(t => t.id !== id);
+            saveLocalData();
+            render(); 
+            showStatus('已经删除。','ok'); 
+        } 
+    });
+    
+    // 初始化执行
+    function init() {
+        els.tripDate.value=todayStr(); 
+        loadLocalData();
+        render();
+    }
+    
+    init();
+
   </script>
 </body>
 </html>
